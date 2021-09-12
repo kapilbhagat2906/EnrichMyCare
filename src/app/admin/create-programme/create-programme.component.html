@@ -1,0 +1,38 @@
+<div class="exercise-programme container">
+  <form [formGroup]="exerciseProgrammeForm">
+    <div class="row">
+      <div class="col-md-6 form-field">
+        <label>Name of Exercise Programme</label>
+        <input
+          formControlName="programmeName"
+          placeholder="Eg. Power Hour, Curls n' Crunches"
+        />
+      </div>
+      <div class="col-md-6 form-field">
+        <label>Date</label>
+        <input />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-field">
+        <label>Goals/Objectives</label>
+        <textarea></textarea>
+      </div>
+    </div>
+    <div class="row" *ngIf="exercises?.length">
+      <div class="col">
+        <app-exercise
+          formArrayName="exercises"
+          [formArrayIndex]="i"
+          *ngFor="let exercise of exercises; let i = index"
+          class="exercise"
+        ></app-exercise>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="addExercise()">Add exercise</button>
+      </div>
+    </div>
+  </form>
+</div>

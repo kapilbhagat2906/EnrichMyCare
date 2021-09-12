@@ -1,0 +1,15 @@
+<div class="user-details">
+  <div class="header">
+    <div class="info">
+      <fa-icon [icon]="faUserCircle" size="3x"></fa-icon>
+      <div>
+        <div class="name">{{ user.name }}</div>
+        <div>Nhs number: {{ user.nhsNumber }}</div>
+        <div>Diagnosis: {{ user.diagnosis }}</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="addExerciseProgramme()">Add Programme</button>
+    </div>
+  </div>
+</div>

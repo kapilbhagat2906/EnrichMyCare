@@ -1,0 +1,31 @@
+<div class="home">
+  <div class="row no-gutters">
+    <div class="col-3 sidebar">
+      <div class="content">
+        <ul *ngIf="users && users.length" class="users-list">
+          <li
+            *ngFor="let user of users"
+            [ngClass]="{ active: user.nhsNumber === activeUser.nhsNumber }"
+            (click)="selectUser(user)"
+          >
+            <fa-icon [icon]="faUserCircle"></fa-icon>
+            <span>{{ user.name }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">
+        <div class="add-user" (click)="addUser()">
+          <fa-icon [icon]="faPlusCircle"></fa-icon>
+          <span>Add new user</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-9 content">
+      <app-user-details
+        *ngIf="activeUser"
+        [user]="activeUser"
+        (addProgramme)="addProgramme()"
+      ></app-user-details>
+    </div>
+  </div>
+</div>

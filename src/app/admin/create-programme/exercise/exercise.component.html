@@ -1,0 +1,45 @@
+<div class="exercise" [formGroup]="form">
+  <div class="row">
+    <div class="col-md-6 form-field">
+      <label>Exercise Name</label>
+      <input placeholder="Eg. Squats, Push-ups" formControlName="name" />
+    </div>
+    <div class="col-md-6 form-field">
+      <label>Review Date</label>
+      <input formControlName="reviewDate" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 form-field">
+      <label>Description of exercise activity</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-progression
+        formArrayName="progressions"
+        [formArrayIndex]="i"
+        *ngFor="let progression of progressions; let i = index"
+      ></app-progression>
+    </div>
+    <div class="col-12">
+      <span class="add-progression" (click)="addProgression()">
+        <fa-icon [icon]="faPlus"></fa-icon>
+        <span>Add progression repitition</span>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let media of medias" class="col-md-3 media"></div>
+    <div class="col-md-3 file-input">
+      <label for="mediaUpload">
+        <div>
+          <fa-icon [icon]="faPaperclip"></fa-icon>
+          <div>Photos/Videos upload</div>
+        </div>
+      </label>
+      <input id="mediaUpload" type="file" (change)="addMedia()" />
+    </div>
+  </div>
+</div>

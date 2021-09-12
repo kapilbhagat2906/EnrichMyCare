@@ -1,0 +1,14 @@
+.add-user {
+  .form-field {
+    color: #36454f;
+
+    label {
+      font-weight: bold;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px 20px;
+    }
+  }
+}

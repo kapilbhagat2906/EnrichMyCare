@@ -1,0 +1,59 @@
+.home {
+  .sidebar {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #e0e0e0;
+    .content {
+      flex-grow: 1;
+      .users-list {
+        list-style: none;
+        padding: 0;
+        li {
+          background: #bdbdbd;
+          padding: 20px;
+          font-size: 20px;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          border-bottom: 3px solid #e0e0e0;
+          cursor: pointer;
+          position: relative;
+
+          fa-icon {
+            margin-right: 10px;
+            font-size: 30px;
+          }
+
+          &.active {
+            &:after {
+              content: "";
+              height: 100%;
+              width: 5px;
+              position: absolute;
+              right: 0;
+              background: #000;
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      .add-user {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+
+        fa-icon {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .content {
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+}

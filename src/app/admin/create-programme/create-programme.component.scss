@@ -1,0 +1,22 @@
+.exercise-programme {
+  background-color: rgba(#d3d3d3, 0.5);
+  .row {
+    padding: 10px 0;
+  }
+  .form-field {
+    color: #36454f;
+
+    label {
+      font-weight: bold;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px 20px;
+    }
+  }
+  .exercise {
+    display: block;
+    border-top: 2px solid #dcdcdc;
+  }
+}

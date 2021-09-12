@@ -1,0 +1,32 @@
+<div class="progression" [formGroup]="form">
+  <div class="row">
+    <div class="col-md-3 form-field">
+      <div><input formControlName="repsCount" /></div>
+      <label>reps</label>
+    </div>
+    <div class="col-md-4 form-field">
+      <div>
+        <div ngbDropdown class="d-inline-block">
+          <button
+            class="btn btn-outline-primary"
+            id="dropdownBasic1"
+            ngbDropdownToggle
+          >
+            --Select--
+          </button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem *ngFor="let number of timesCountOptions">
+              {{ number }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <label>times per week</label>
+    </div>
+    <div class="col-md-5 form-field">
+      <label>for the first</label>
+      <div><input formControlName="duration" /></div>
+    </div>
+  </div>
+</div>
